@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+locale: "tr"
+site_url: "https://ethembyrm.com.tr"
+display_url: "https://ethembyrm.com.tr"
+publish_mode: simple
+collections:
+  - name: "site"
+    label: "Site içerikleri"
+    files:
+      - name: "content"
+        label: "Ana sayfa"
+        file: "content.json"
+        format: "json"
+        fields:
+          - {label: "Hero başlığı", name: "heroTitle", widget: "string", hint: "Vurgulamak istediğin kelimeyi <span>kelime</span> şeklinde yazabilirsin."}
+          - {label: "Hero açıklaması", name: "heroDescription", widget: "text"}
+          - {label: "Hakkımızda metni", name: "aboutDescription", widget: "text"}
+          - {label: "Proje 1 başlığı", name: "project1Title", widget: "string"}
+          - {label: "Proje 1 kategorisi", name: "project1Type", widget: "string"}
+          - {label: "Proje 1 görseli", name: "project1Image", widget: "image", required: false}
+          - {label: "Proje 2 başlığı", name: "project2Title", widget: "string"}
+          - {label: "Proje 2 kategorisi", name: "project2Type", widget: "string"}
+          - {label: "Proje 2 görseli", name: "project2Image", widget: "image", required: false}
+          - {label: "Proje 3 başlığı", name: "project3Title", widget: "string"}
+          - {label: "Proje 3 kategorisi", name: "project3Type", widget: "string"}
+          - {label: "Proje 3 görseli", name: "project3Image", widget: "image", required: false}
