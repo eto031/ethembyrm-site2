@@ -33,6 +33,7 @@
     <section class="contact" id="contact"><div class="wrap contact-grid fade"><div><div class="label">04 / iletişim</div><h2>Birlikte <span>başlayalım.</span></h2><div class="contact-detail">Aklınızdaki fikri anlatın.<a href="mailto:ethembyrm0@gmail.com">ethembyrm0@gmail.com</a><a href="tel:+905013362108">+90 501 336 21 08</a><a href="https://instagram.com/ethem.byrm" target="_blank" rel="noreferrer">@ethem.byrm</a></div></div><form name="iletisim" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="iletisim"><input type="hidden" name="bot-field"><input class="field" name="name" placeholder="Adınız" required><input class="field" name="email" type="email" placeholder="E-posta adresiniz" required><textarea class="field" name="message" placeholder="Projenizden bahsedin..." required></textarea><button class="send" type="submit">Mesaj gönder ↗</button></form></div></section>
   </main>
   <footer><div class="wrap footer-flex"><span>© 2026 Ethem Byrm</span><div><a href="#top">Başa dön ↑</a><a href="https://instagram.com/ethem.byrm" target="_blank" rel="noreferrer">Instagram ↗</a></div></div></footer>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     const header=document.getElementById("header"),menu=document.getElementById("menu"),nav=document.getElementById("nav");
     menu.addEventListener("click",()=>{header.classList.toggle("mobile-open");menu.textContent=header.classList.contains("mobile-open")?"×":"☰"});
@@ -43,6 +44,7 @@
     new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(link=>link.classList.toggle("active",link.hash==="#"+entry.target.id))}),{rootMargin:"-42% 0px -48% 0px"}).observe(sections[0]);
     sections.slice(1).forEach(section=>new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(link=>link.classList.toggle("active",link.hash==="#"+entry.target.id))}),{rootMargin:"-42% 0px -48% 0px"}).observe(section));
     fetch("content.json").then(response=>{if(!response.ok)throw new Error("İçerik dosyası okunamadı");return response.json()}).then(content=>{Object.keys(content).forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=content[id]});["project1Image","project2Image","project3Image"].forEach((id,index)=>{if(content[id]){const visual=document.querySelector([".visual-one",".visual-two",".visual-three"][index]);visual.style.backgroundImage="url('"+content[id]+"')";visual.style.backgroundSize="cover";visual.style.backgroundPosition="center";visual.classList.add("uploaded")}})}).catch(error=>console.warn(error.message));
+    if(window.netlifyIdentity){netlifyIdentity.on("init",user=>{if(window.location.hash.includes("invite_token")&&!user){netlifyIdentity.open("signup")}});netlifyIdentity.on("login",()=>{window.location.href="/admin/"})}
   </script>
 </body>
 </html>
