@@ -44,7 +44,7 @@
     new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(link=>link.classList.toggle("active",link.hash==="#"+entry.target.id))}),{rootMargin:"-42% 0px -48% 0px"}).observe(sections[0]);
     sections.slice(1).forEach(section=>new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)links.forEach(link=>link.classList.toggle("active",link.hash==="#"+entry.target.id))}),{rootMargin:"-42% 0px -48% 0px"}).observe(section));
     fetch("content.json").then(response=>{if(!response.ok)throw new Error("İçerik dosyası okunamadı");return response.json()}).then(content=>{Object.keys(content).forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=content[id]});["project1Image","project2Image","project3Image"].forEach((id,index)=>{if(content[id]){const visual=document.querySelector([".visual-one",".visual-two",".visual-three"][index]);visual.style.backgroundImage="url('"+content[id]+"')";visual.style.backgroundSize="cover";visual.style.backgroundPosition="center";visual.classList.add("uploaded")}})}).catch(error=>console.warn(error.message));
-    if(window.netlifyIdentity){netlifyIdentity.on("init",user=>{if(window.location.hash.includes("invite_token")&&!user){netlifyIdentity.open("signup")}});netlifyIdentity.on("login",()=>{window.location.href="/admin/"})}
+    if(window.netlifyIdentity){netlifyIdentity.on("init",user=>{if(window.location.hash.includes("invite_token")&&!user){netlifyIdentity.open("signup")}})}
   </script>
 </body>
 </html>
