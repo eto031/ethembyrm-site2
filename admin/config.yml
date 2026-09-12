@@ -16,9 +16,27 @@ collections:
         file: "content.json"
         format: "json"
         fields:
+          - {label: "Hero üst etiketi", name: "heroEyebrow", widget: "string"}
           - {label: "Hero başlığı", name: "heroTitle", widget: "string", hint: "Vurgulamak istediğin kelimeyi <span>kelime</span> şeklinde yazabilirsin."}
           - {label: "Hero açıklaması", name: "heroDescription", widget: "text"}
+          - {label: "Yaklaşım üst etiketi", name: "aboutEyebrow", widget: "string"}
+          - {label: "Yaklaşım başlığı", name: "aboutTitle", widget: "string"}
           - {label: "Hakkımızda metni", name: "aboutDescription", widget: "text"}
+          - {label: "İstatistik 1 değeri", name: "stat1Value", widget: "string"}
+          - {label: "İstatistik 1 açıklaması", name: "stat1Label", widget: "string"}
+          - {label: "İstatistik 2 değeri", name: "stat2Value", widget: "string"}
+          - {label: "İstatistik 2 açıklaması", name: "stat2Label", widget: "string"}
+          - {label: "İstatistik 3 değeri", name: "stat3Value", widget: "string"}
+          - {label: "İstatistik 3 açıklaması", name: "stat3Label", widget: "string"}
+          - {label: "Hizmetler üst etiketi", name: "servicesEyebrow", widget: "string"}
+          - {label: "Hizmetler başlığı", name: "servicesTitle", widget: "string"}
+          - {label: "Hizmetler açıklaması", name: "servicesDescription", widget: "text"}
+          - {label: "Hizmet 1 başlığı", name: "service1Title", widget: "string"}
+          - {label: "Hizmet 1 açıklaması", name: "service1Description", widget: "text"}
+          - {label: "Hizmet 2 başlığı", name: "service2Title", widget: "string"}
+          - {label: "Hizmet 2 açıklaması", name: "service2Description", widget: "text"}
+          - {label: "Hizmet 3 başlığı", name: "service3Title", widget: "string"}
+          - {label: "Hizmet 3 açıklaması", name: "service3Description", widget: "text"}
           - {label: "Proje 1 başlığı", name: "project1Title", widget: "string"}
           - {label: "Proje 1 kategorisi", name: "project1Type", widget: "string"}
           - {label: "Proje 1 görseli", name: "project1Image", widget: "image", required: false}
